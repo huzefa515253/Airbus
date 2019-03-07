@@ -9,8 +9,9 @@ namespace Airbus.Data.ReadModel
         public Guid? Id { set; get; }
         public Guid? ModelNumber { set; get; }
         public DateTime ManufacturingDate { set; get; }
-        int FuelCapacityOnLeftWing { get; set; }
-        int FuelCapacityOnRightWing { get; set; }
-        public PlaneModel PlaneModel { set; get; }
-}
+        public int FuelCapacityOnLeftWing { get; set; }
+        public int FuelCapacityOnRightWing { get; set; }
+        public string MSN { get; set; }
+        
+    }
 }

@@ -18,7 +18,7 @@ namespace Airbus.Data.ReadQuery.Flights
 
         public override Flight Execute(IDbConnection db)
         {
-            return db.Query<Flight>("Select * from Flight where Id=@Id", new { @Id = FlightId }).FirstOrDefault();
+            return db.Query<Flight>("Select * from Flights where Id=@Id", new { @Id = FlightId }).FirstOrDefault();
         }
     }
 }

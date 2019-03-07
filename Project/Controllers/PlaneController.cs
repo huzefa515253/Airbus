@@ -1,4 +1,7 @@
 ﻿using Airbus.Data.ReadModel;
+using Airbus.Data.ReadQuery.Planes;
+using AutoMapper;
+using Domain.Interface;
 using Project.Business;
 using Project.Models;
 using System;
@@ -11,6 +14,8 @@ namespace Project.Controllers
 {
     public class PlaneController : Controller
     {
+        private IDbContext _dbContext = DatabaseConnection.GetConnection();
+
         private FlightsBusiness FlightsBusiness;
         private PlaneBusiness PlaneBusiness;
 
@@ -45,9 +50,19 @@ namespace Project.Controllers
 
         public ActionResult GetPlanesById(Guid planeId)
         {
-            return new CustomJsonResult(new { Data = FlightsBusiness.GetFlightBYId(planeId) }, JsonRequestBehavior.AllowGet);
+            return new CustomJsonResult(new { Data = PlaneBusiness.GetPlaneById(planeId) }, JsonRequestBehavior.AllowGet);
 
         }
 
+        public ActionResult GetPlaneByMSN(string msn)
+        {
+            var command = new GetPlaneByMSN(msn);
+            var result = _dbContext.Execute(command);
+            var data=Mapper.Map<Plane, PlaneViewModel>(result);
+            return View(data);
+            //return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); ;
+            
+        }
+        
     }
 }

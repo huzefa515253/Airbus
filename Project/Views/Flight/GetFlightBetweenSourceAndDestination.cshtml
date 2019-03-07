@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Project.Models.FlightViewModel>
+
+@{
+    ViewBag.Title = "GetFlightBetweenSourceAndDestination";
+}
+
+<h2>GetFlightBetweenSourceAndDestination</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaneId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HarnessLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtmosphericPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelQuentityOnLeftWing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelQuentityOnRightWing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaximumAltitudeToBeReached)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JourneyDurationInMin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaneId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HarnessLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrossWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtmosphericPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelQuentityOnLeftWing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelQuentityOnRightWing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaximumAltitudeToBeReached)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JourneyDurationInMin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

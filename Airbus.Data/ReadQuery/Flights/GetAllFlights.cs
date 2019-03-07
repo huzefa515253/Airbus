@@ -12,7 +12,7 @@ namespace Airbus.Data.ReadQuery.Flights
         
             public override IEnumerable<Flight> Execute(IDbConnection db)
             {
-                return db.Query<Flight>("Select * from Flight");
+                return db.Query<Flight>("Select * from Flights");
             }
         
     }

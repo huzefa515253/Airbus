@@ -6,9 +6,9 @@ namespace Airbus.Data.ReadModel
 {
     public class Airport
     {
-        Guid? Id { set; get; }
-        string Name { set; get; }
-        string CityName { set; get; }
+        public Guid? Id { set; get; }
+        public string Name { set; get; }
+        public string CityName { set; get; }
 
     }
 }

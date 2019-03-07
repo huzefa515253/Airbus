@@ -1,4 +1,6 @@
 ﻿using Airbus.Data.ReadModel;
+using Airbus.Data.ReadQuery.Flights;
+using AutoMapper;
 using Domain.Interface;
 using Newtonsoft.Json;
 using Project.Business;
@@ -13,7 +15,8 @@ namespace Project.Controllers
 {
     public class FlightController : Controller
     {
-       
+        private IDbContext _dbContext=DatabaseConnection.GetConnection();
+        
         private FlightsBusiness FlightsBusiness;
 
         public FlightController()
@@ -51,5 +54,28 @@ namespace Project.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult GetFlightBetweenSourceAndDestination(string source,string destination)
+        {
+            var command = new FetchFlightBetweenSourceAndDestinationCity(source, destination);
+            var result=_dbContext.Execute(command);
+            var data = Mapper.Map<IEnumerable<Flight>, IEnumerable<FlightViewModel>>(result);
+
+            return View(data);
+            //return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); ;
+        }
+
+        [HttpGet]
+        public ActionResult GetFlightByModelName(string modelName)
+        {
+            var command = new FetchFlightByModel(modelName);
+            var result = _dbContext.Execute(command);
+
+            
+            return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); 
+        }
+
+
     }
 }
