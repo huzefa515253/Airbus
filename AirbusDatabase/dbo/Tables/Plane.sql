@@ -4,7 +4,10 @@
     [ManufacturingDate]       DATETIME         NULL,
     [FuelCapacityOnLeftWing]  INT              NULL,
     [FuelCapacityOnRightWing] INT              NULL,
+    [MSN]                     NVARCHAR (MAX)   NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     FOREIGN KEY ([ModelNumber]) REFERENCES [dbo].[PlaneModel] ([Id])
 );
+
+
 

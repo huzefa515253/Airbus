@@ -5,8 +5,8 @@
     [GrossWeight]                INT              NULL,
     [AtmosphericPressure]        INT              NULL,
     [RoomTemperature]            INT              NULL,
-    [SourceAirport]              NVARCHAR (MAX)   NULL,
-    [DestinationAirport]         NVARCHAR (MAX)   NULL,
+    [SourceAirport]              UNIQUEIDENTIFIER NULL,
+    [DestinationAirport]         UNIQUEIDENTIFIER NULL,
     [FuelQuentityOnLeftWing]     INT              NULL,
     [FuelQuentityOnRightWing]    INT              NULL,
     [MaximumAltitudeToBeReached] INT              NULL,
@@ -16,4 +16,6 @@
     PRIMARY KEY CLUSTERED ([Id] ASC),
     FOREIGN KEY ([PlaneId]) REFERENCES [dbo].[Plane] ([Id])
 );
+
+
 
