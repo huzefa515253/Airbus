@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Project.Models.PlaneViewModel>
+
+@{
+    ViewBag.Title = "GetAllPlanes";
+}
+
+<h2>GetAllPlanes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ModelNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelCapacityOnLeftWing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelCapacityOnRightWing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MSN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModelNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelCapacityOnLeftWing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelCapacityOnRightWing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

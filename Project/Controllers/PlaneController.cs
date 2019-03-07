@@ -32,20 +32,21 @@ namespace Project.Controllers
 
 
         [HttpPost]
-        public ActionResult CreatePlane(PlaneViewModel flight)
+        public ActionResult Create(PlaneViewModel flight)
         {
             return View();
         }
 
         [HttpGet]
-        public ActionResult CreatePlane()
+        public ActionResult Create()
         {
             return View();
         }
 
         public ActionResult GetAllPlanes()
         {
-            return new CustomJsonResult(new { Data = PlaneBusiness.GetAllPlane() }, JsonRequestBehavior.AllowGet);
+            return View(PlaneBusiness.GetAllPlane());
+            //return new CustomJsonResult(new { Data =  }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetPlanesById(Guid planeId)
@@ -59,8 +60,8 @@ namespace Project.Controllers
             var command = new GetPlaneByMSN(msn);
             var result = _dbContext.Execute(command);
             var data=Mapper.Map<Plane, PlaneViewModel>(result);
-            return View(data);
-            //return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); ;
+            //return View(data);
+            return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); ;
             
         }
         

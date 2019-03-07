@@ -76,6 +76,13 @@ namespace Project.Controllers
             return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet); 
         }
 
+        [HttpGet]
+        public ActionResult GetFlightConsumptionByFlightId(Guid flightId)
+        {
+            var command = new GetFlightConsumptionByFlightId(flightId);
+            var result = _dbContext.Execute(command);
+            return new CustomJsonResult(new { Data = result }, JsonRequestBehavior.AllowGet);
 
+        }
     }
 }
