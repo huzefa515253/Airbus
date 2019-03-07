@@ -1,14 +1,4 @@
-﻿using Airbus.Data.Command;
-using Airbus.Data.Data;
-using Airbus.Data.ReadQuery;
-using Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Web;
+﻿using Domain.Interface;
 using System.Web.Mvc;
 
 namespace Project.Controllers
@@ -25,8 +15,6 @@ namespace Project.Controllers
         public ActionResult Index()
         {
 
-            var command = new GetData();
-            var result=_dbContext.Execute(command);
 
 
             return View();

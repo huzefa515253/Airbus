@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Web;
 
-namespace Airbus.Data.ReadModel
+namespace Project.Models
 {
-    public class Flight
+    public class FlightViewModel
     {
         public Guid? Id { get; set; }
         public Guid? PlaneId { get; set; }
@@ -18,7 +19,5 @@ namespace Airbus.Data.ReadModel
         public string FlightNumber { get; set; }
         public DateTime DepartureDateTime { get; set; }
         public int JourneyDurationInMin { get; set; }
-
-        public Plane Plane { get; set; }
     }
 }

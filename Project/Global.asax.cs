@@ -18,6 +18,7 @@ namespace Project
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             IocConfig.Build();
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

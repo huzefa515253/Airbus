@@ -14,4 +14,10 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Command\Airport\" />
+    <Folder Include="Command\Flight\" />
+    <Folder Include="Command\Plane\" />
+  </ItemGroup>
+
 </Project>
