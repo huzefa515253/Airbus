@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project", "Project\Project.csproj", "{FC914B32-B1F0-45C6-AEA3-8205D8D27114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{BDA86691-1E21-4B1B-B02E-FCF234D9E760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{BDA86691-1E21-4B1B-B02E-FCF234D9E760}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7F8BD2DE-57E3-4BA2-96DF-D771A523A3B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbus.Data", "Airbus.Data\Airbus.Data.csproj", "{5D67E5DB-876D-4779-B633-57027EE60DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airbus.Data", "Airbus.Data\Airbus.Data.csproj", "{5D67E5DB-876D-4779-B633-57027EE60DF3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AirbusDatabase", "AirbusDatabase\AirbusDatabase.sqlproj", "{A56A7FBD-0E0E-4604-9298-BD9F07E02712}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +31,19 @@ Global
 		{5D67E5DB-876D-4779-B633-57027EE60DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D67E5DB-876D-4779-B633-57027EE60DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D67E5DB-876D-4779-B633-57027EE60DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5D67E5DB-876D-4779-B633-57027EE60DF3} = {7F8BD2DE-57E3-4BA2-96DF-D771A523A3B4}
+		{A56A7FBD-0E0E-4604-9298-BD9F07E02712} = {7F8BD2DE-57E3-4BA2-96DF-D771A523A3B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3063DFED-3C85-4A8C-8D21-C2792BE0632B}
